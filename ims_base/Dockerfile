@@ -34,7 +34,7 @@ RUN apt-get update && \
 					gcc flex bison libmysqlclient-dev make libssl-dev libcurl4-openssl-dev \
 					libxml2-dev libpcre3-dev bash-completion g++ autoconf libmnl-dev \
 					libsctp-dev libradcli-dev libradcli4 iproute2 net-tools \
-					iputils-ping
+					iputils-ping psmisc
 
 # Fetch Kamailio code (branch 5.3)
 RUN mkdir -p /usr/local/src/ && cd /usr/local/src/ && \

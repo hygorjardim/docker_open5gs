@@ -36,7 +36,7 @@ RUN apt-get update && \
 					libevent-dev libhiredis-dev libio-multiplex-perl libio-socket-inet6-perl libiptc-dev libjson-glib-dev libnet-interface-perl \
 					libpcap0.8-dev libpcre3-dev libsocket6-perl libspandsp-dev libssl-dev libswresample-dev libsystemd-dev libxmlrpc-core-c3-dev \
 					markdown dkms module-assistant keyutils libnfsidmap2 nfs-common rpcbind libglib2.0-dev zlib1g-dev libavcodec-extra \
-					libcurl4-openssl-dev netcat-openbsd netcat iptables iproute2 net-tools iputils-ping libconfig-tiny-perl libwebsockets-dev
+					libcurl4-openssl-dev netcat-openbsd netcat iptables iproute2 net-tools iputils-ping libconfig-tiny-perl libwebsockets-dev tcpdump psmisc
 
 # Fetch RTPEngine code (tag mr7.4.1), build and install
 RUN git clone https://github.com/sipwise/rtpengine && \

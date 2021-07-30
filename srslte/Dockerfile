@@ -33,7 +33,7 @@ RUN apt-get update && \
     apt-get -y install cmake libfftw3-dev libmbedtls-dev libboost-program-options-dev libconfig++-dev libsctp-dev git \
     libzmq3-dev libboost-system-dev libboost-test-dev libboost-thread-dev libqwt-qt5-dev qtbase5-dev \
     software-properties-common g++ make pkg-config libpython2-dev python-numpy swig libi2c-dev \
-    libboost-program-options-dev libconfig++-dev
+    libboost-program-options-dev libconfig++-dev tcpdump psmisc
 
 # Install dependencies to build SoapySDR and Lime Suite
 RUN add-apt-repository -y ppa:myriadrf/drivers && \

@@ -94,7 +94,9 @@ RUN apt-get update && \
         python3-setuptools \
         python3-wheel \
         python3-pip \
-        iptables && \
+        iptables \
+        tcpdump \
+        psmisc && \
     apt-get autoremove -y && apt-get autoclean
 
 RUN pip3 install click

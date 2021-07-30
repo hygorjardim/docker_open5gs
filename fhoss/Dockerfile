@@ -40,7 +40,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install updates and dependencies
 RUN apt-get update && \
-	apt-get -y install git vim wget subversion mysql-server
+	apt-get -y install git vim wget subversion mysql-server tcpdump psmisc
 
 # Install Oracle Java 7 SE JDK
 RUN mkdir -p  /usr/lib/jvm/ && \
