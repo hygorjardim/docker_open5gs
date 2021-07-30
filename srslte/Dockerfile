@@ -35,27 +35,6 @@ RUN apt-get update && \
     software-properties-common g++ make pkg-config libpython2-dev python-numpy swig libi2c-dev \
     libboost-program-options-dev libconfig++-dev tcpdump psmisc
 
-# Install dependencies to build SoapySDR and Lime Suite
-RUN add-apt-repository -y ppa:myriadrf/drivers && \
-    apt update && \
-    apt -y install libi2c-dev libusb-1.0-0-dev git g++ cmake libsqlite3-dev libwxgtk3.0-gtk3-dev freeglut3-dev \
-    python3-distutils gnuplot libfltk1.3-dev liboctave-dev
-
-# Install SoapySDR from Source
-RUN git clone https://github.com/pothosware/SoapySDR.git && \
-    cd SoapySDR && \
-    git checkout tags/soapy-sdr-0.7.2 -b soapy-sdr-0.7.2 && \
-    mkdir build && cd build && cmake .. && \
-    make -j`nproc` && make install && ldconfig
-
-# Install LimeSuite
-RUN git clone https://github.com/myriadrf/LimeSuite.git && \
-    cd LimeSuite && \
-    git checkout tags/v20.10.0 -b v20.10.0 && \
-    mkdir builddir && cd builddir && cmake .. && \
-    make -j`nproc` && make install && ldconfig && \
-    cd ../udev-rules && sh ./install.sh
-
 # UHD drivers for USRP
 RUN add-apt-repository ppa:ettusresearch/uhd && \
     apt update && apt -y install libuhd-dev libuhd3.15.0 uhd-host && \
