@@ -26,6 +26,8 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+if [[ -v COLLECT_PCAP ]]; then nohup tcpdump -i eth0 -w /tmp/dns_check_run.pcap 2>&1 > /dev/null & fi
+
 cp /mnt/dns/epc_zone /etc/bind
 cp /mnt/dns/ims_zone /etc/bind
 cp /mnt/dns/named.conf /etc/bind

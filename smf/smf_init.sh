@@ -26,6 +26,8 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+if [[ -v COLLECT_PCAP ]]; then nohup tcpdump -i eth0 -w /tmp/smf_check_run.pcap 2>&1 > /dev/null & fi
+
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 export IP_ADDR=$(awk 'END{print $1}' /etc/hosts)

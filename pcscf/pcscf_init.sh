@@ -26,6 +26,8 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+if [[ -v COLLECT_PCAP ]]; then nohup tcpdump -i eth0 -w /tmp/pcscf_check_run.pcap 2>&1 > /dev/null & fi
+
 sh -c "echo 1 > /proc/sys/net/ipv4/ip_nonlocal_bind"
 sh -c "echo 1 > /proc/sys/net/ipv6/ip_nonlocal_bind"
 

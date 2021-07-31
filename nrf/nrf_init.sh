@@ -26,6 +26,8 @@
 # OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+if [[ -v COLLECT_PCAP ]]; then nohup tcpdump -i eth0 -w /tmp/nrf_check_run.pcap 2>&1 > /dev/null & fi
+
 cp /mnt/nrf/nrf.yaml install/etc/open5gs
 sed -i 's|NRF_IP|'$NRF_IP'|g' install/etc/open5gs/nrf.yaml
 
